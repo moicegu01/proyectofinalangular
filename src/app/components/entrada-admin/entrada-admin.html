@@ -1,0 +1,62 @@
+<section class="admin-panel">
+  <h2>Panel de Administración</h2>
+
+  <div class="card-form">
+    <h3>Añadir Nuevo Videojuego</h3>
+    <form (ngSubmit)="agregarVideojuego()">
+
+      <div>
+        <label>Nombre del Juego:</label>
+        <input type="text" name="nombre" [(ngModel)]="nuevoJuego.nombre" required>
+      </div>
+
+      <div>
+        <label>Género:</label>
+        <input type="text" name="genero" [(ngModel)]="nuevoJuego.genero" required>
+      </div>
+
+      <div>
+        <label>Fecha de Salida:</label>
+        <input type="date" name="fechaSalida" [(ngModel)]="nuevoJuego.fechaSalida" required>
+      </div>
+
+      <div>
+        <label>Plataformas (separadas por coma):</label>
+        <input type="text" name="plataforma" [(ngModel)]="nuevoJuego.plataforma" placeholder="PC, PS5, Xbox..." required>
+      </div>
+
+      <button type="submit" class="btn-guardar">Guardar Videojuego</button>
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="table-container">
+    <h3>Base de Datos de Juegos</h3>
+    <p *ngIf="listaVideojuegos.length === 0">No hay videojuegos registrados.</p>
+
+    <table *ngIf="listaVideojuegos.length > 0" border="1">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Género</th>
+          <th>Fecha de Salida</th>
+          <th>Plataformas</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let juego of listaVideojuegos">
+          <td>{{ juego.nombre }}</td>
+          <td>{{ juego.genero }}</td>
+          <td>{{ juego.fechaSalida | date:'dd/MM/yyyy' }}</td>
+          <td>{{ juego.plataforma }}</td>
+          <td>
+            <button class="btn-delete" (click)="borrar(juego.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+

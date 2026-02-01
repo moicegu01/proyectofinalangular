@@ -1,0 +1,45 @@
+/* app.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #3f51b5;
+}
+
+.logo {
+  color: #3f51b5;
+  margin: 0;
+  font-size: 1.4rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1; 
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer {
+  background-color: #1a1a1a;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: auto; 
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #3f51b5;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
